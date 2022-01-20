@@ -7,7 +7,6 @@
 {.push raises: [Defect].}
 
 import
-  std/[os],
   stew/[assign2, base10],
   chronicles, chronos,
   ./sync/sync_manager,
