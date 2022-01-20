@@ -1329,7 +1329,7 @@ proc new*(T: type Eth2Node, config: BeaconNodeConf, runtimeCfg: RuntimeConfig,
     pubsub: pubsub,
     wantedPeers: config.maxPeers,
     cfg: runtimeCfg,
-    peerPool: newPeerPool[Peer, PeerID](maxPeers = config.maxPeers),
+    peerPool: newPeerPool[Peer, PeerID](maxPeers = config.maxPeers * 2),
     # Its important here to create AsyncQueue with limited size, otherwise
     # it could produce HIGH cpu usage.
     connQueue: newAsyncQueue[PeerAddr](ConcurrentConnections),
